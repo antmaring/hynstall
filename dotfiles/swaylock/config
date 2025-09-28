@@ -1,0 +1,10 @@
+ignore-empty-password
+color=1a1a1a
+show-failed-attempts
+indicator-radius=90
+indicator-thickness=8
+ring-color=random
+inside-wrong-color=7f1d1d
+line-uses-inside
+font=FiraCode
+image=${HOME}/.Images/arch/arch06.png
