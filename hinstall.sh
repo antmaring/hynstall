@@ -21,7 +21,6 @@ pacman_apps=(
   "bemenu"
   "slurp"
   "grim"
-  "idotool"
   "wev"
   "nwg-look"
   "rofi"
@@ -29,6 +28,18 @@ pacman_apps=(
   "alacritty"
   "sakura"
   "wezterm"
+  "ranger"
+  "vifm"
+  "yazi"
+  "mpv"
+  "pipewire" 
+  "pipewire-alsa" 
+  "pipewire-jack" 
+  "pipewire-pulse" 
+  "pipewire-audio" 
+  "libpipewire" 
+  "libwireplumber" 
+  "wireplumber"
 )
 
 # Paquetes AUR (yay)
