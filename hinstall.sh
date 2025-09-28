@@ -6,7 +6,7 @@
 
 #REPO_URL="https://github.com/usuario/mis-dotfiles.git"
 CONFIG_DIR="$HOME/.fakeconfig"
-WALLPAPERS_DIR="$HOME/Wallpapers/hypr"
+WALLPAPERS_DIR="$HOME/Wallpapers"
 
 # Paquetes principales (pacman)
 #  sudo pacman -S 
