@@ -37,8 +37,6 @@ pacman_apps=(
   "pipewire-jack" 
   "pipewire-pulse" 
   "pipewire-audio" 
-  "libpipewire" 
-  "libwireplumber" 
   "wireplumber"
 )
 
