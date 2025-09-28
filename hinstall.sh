@@ -79,10 +79,14 @@ install_apps_aur() {
 }
 
 install_dotfiles() {
-  mkdir -p $CONFIG_DIR
-  echo "📂 Copiando dotfiles a $CONFIG_DIR..."
   mkdir -p "$CONFIG_DIR"
-  rsync -avh --ignore-existing "./dotfiles/" "$CONFIG_DIR/"
+  echo "📂 Copiando dotfiles a $CONFIG_DIR..."
+  find ./dotfiles -type d | while read -r f; do
+    target="$CONFIG_DIR/$(basename "$f")"
+    [ -L "$target" ] && rm -rf "$target"
+  done
+  #rsync -avh --ignore-existing "./dotfiles/" "$CONFIG_DIR/"
+  rsync -avh "./dotfiles/" "$CONFIG_DIR/"
 }
 
 install_wallpapers() {
