@@ -5,7 +5,7 @@
 # ----------------------------
 
 #REPO_URL="https://github.com/usuario/mis-dotfiles.git"
-CONFIG_DIR="$HOME/.fakeconfig"
+CONFIG_DIR="$HOME/.config"
 WALLPAPERS_DIR="$HOME/Wallpapers"
 
 # Paquetes principales (pacman)
@@ -13,7 +13,7 @@ WALLPAPERS_DIR="$HOME/Wallpapers"
  #sudo pacman -S hyprpaper wofi
 pacman_apps=(
   "hyprland"
-  "hyprland xdg-desktop-portal-hyprland"
+  "xdg-desktop-portal-hyprland"
   "swaync"
   "swww"
   "swaylock"
@@ -54,7 +54,7 @@ is_installed() {
   pacman -Qi "$1" &>/dev/null || yay -Qi "$1" &>/dev/null
 }
 
-install_apps_pacman() {
+xinstall_apps_pacman() {
   echo "🔧 Instalando paquetes con pacman..."
   for app in "${pacman_apps[@]}"; do
    if is_installed "$app"; then
@@ -66,7 +66,7 @@ install_apps_pacman() {
   done
 }
 
-install_apps_aur() {
+xinstall_apps_aur() {
   echo "🛠️ Instalando paquetes con yay..."
   for app in "${aur_apps[@]}"; do
     if is_installed "$app"; then
@@ -75,6 +75,22 @@ install_apps_aur() {
       echo "📦 Instalando $app con yay..."
       yay -S --noconfirm --needed "$app"
     fi
+  done
+}
+
+install_apps_pacman() {
+  echo "🔧 Instalando paquetes con pacman..."
+  for app in "${pacman_apps[@]}"; do
+    echo "📦 Instalando $app con pacman..."
+    sudo pacman -S --noconfirm --needed "$app"
+  done
+}
+
+install_apps_aur() {
+  echo "🛠️ Instalando paquetes con yay..."
+  for app in "${aur_apps[@]}"; do
+    echo "📦 Instalando $app con yay..."
+    yay -S --noconfirm --needed "$app"
   done
 }
 
@@ -96,6 +112,7 @@ install_wallpapers() {
   rsync -avh --ignore-existing "./wallpapers/" "$WALLPAPERS_DIR/"
 }
 
+
 # ----------------------------
 # Preparar
 # ----------------------------
@@ -106,27 +123,18 @@ install_wallpapers() {
 # ----------------------------
 # Instalar paquetes pacman
 # ----------------------------
-#install_apps_pacman
-echo "🔧 Instalando paquetes con pacman..."
-for app in "${pacman_apps[@]}"; do
-  echo "📦 Instalando $app con pacman..."
-  sudo pacman -S --noconfirm --needed "$app"
-done
+install_apps_pacman
 
 # ----------------------------
 # Instalar paquetes AUR
 # ----------------------------
-#install_apps_aur
-echo "🛠️ Instalando paquetes con yay..."
-for app in "${aur_apps[@]}"; do
-  echo "📦 Instalando $app con yay..."
-  yay -S --noconfirm --needed "$app"
-done
+install_apps_aur
 
 # ----------------------------
 # Copiar dotfiles
 # ----------------------------
 install_dotfiles
+
 # ----------------------------
 # Copiar wallpapers
 # ----------------------------
