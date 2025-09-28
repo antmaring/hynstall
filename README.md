@@ -14,7 +14,7 @@ Con SUPER+C, abres Chromium.
 Con SUPER+F, abres Firefox.
 
 #SOBRE Hyprland
-Mira .config/hypr/keybindings para ver los programas que están configurados en los atajos.
+Mira .config/hypr/keybindings para ver los programas que están configurados en los atajos. Y añade los que quieras.
 Mira .config/hypr/windowrules para ver los workspaces donde se alojarán los programas (si no viene referencia el programa se abre donde se lanzó).
 Mira Wallpapers/hypr para ver los wallpapers entre los cuales se alterna. Elimina o añade como quieras.
 Abre wev y pulsa tecla que quieres verificar para ver el class y poder añadir programa nuevo en windowrules.
