@@ -84,6 +84,7 @@ install_apps_pacman() {
     echo "📦 Instalando $app con pacman..."
     sudo pacman -S --noconfirm --needed "$app"
   done
+  systemctl --user enable pipewire pipewire-pulse wireplumber
 }
 
 install_apps_aur() {
