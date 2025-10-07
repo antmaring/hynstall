@@ -17,6 +17,7 @@ pacman_apps=(
   "swaync"
   "swww"
   "swaylock"
+  "wlogout"
   "waybar"
   "bemenu"
   "slurp"
